@@ -1,0 +1,3 @@
+host: gif-mqtt.auto-id.wide.ad.jp
+servo_command: path_to_command
+led_command: path_to_command

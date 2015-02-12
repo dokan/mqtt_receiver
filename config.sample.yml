@@ -1,0 +1,3 @@
+host: test.mosquitto.org
+servo_command: path_to_command
+led_command: path_to_command
