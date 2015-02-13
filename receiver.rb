@@ -30,6 +30,7 @@ MQTT::Client.connect(config["host"]) do |c|
 
     case target
     when "servo"
+      next if @message_hash[:angle].nil?
       angle = @message_hash[:angle].to_i
       puts "angle:#{angle}"
       system("#{config["servo_command"]} #{angle}")
