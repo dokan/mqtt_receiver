@@ -31,9 +31,11 @@ MQTT::Client.connect(config["host"]) do |c|
     case target
     when "servo"
       next if @message_hash[:angle].nil?
-      angle = @message_hash[:angle].to_i
-      puts "angle:#{angle}"
-      system("#{config["servo_command"]} #{angle}")
+      angle = @message_hash[:angle]
+      puts "angleX:#{angle[:x]}"
+      puts "angleY:#{angle[:y]}"
+      puts "angleZ:#{angle[:z]}"
+      system("#{config["servo_command"]} #{angle[:x].to_i} #{angle[:y].to_i} #{angle[:z].to_i}")
       puts $?
     when "led"
     end
